@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">carshop</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_password">Enter the password</string>
+    <string name="hint_name">Enter Name</string>
+    <string name="hint_msg">Enter your message here</string>
+</resources>

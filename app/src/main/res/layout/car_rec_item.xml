@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+    android:layout_alignParentTop="true"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_100sdp"
+    android:id="@+id/car_imgV"></ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="car Name"
+        android:id="@+id/car_name_tv"
+        android:layout_alignParentLeft="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="car Name"
+        android:id="@+id/car_price_tv"
+        android:layout_alignParentLeft="true"/>
+    <LinearLayout
+        android:id="@+id/ll_counts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:weightSum="3">
+
+
+        <LinearLayout
+            android:id="@+id/lin_liked"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp">
+
+
+            <TextView
+                android:id="@+id/totalkmtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="like"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/fueltypetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="comments"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp">
+
+
+            <TextView
+                android:id="@+id/cartypetv"
+                android:layout_width="wrap_content"
+                android:text="abc"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/location_tv"
+        android:layout_alignParentLeft="true"
+        android:text="location,country"
+        android:fontFamily="@font/roboto_light"/>
+    <Button
+        android:layout_toRightOf="@+id/location_tv"
+        android:layout_width="match_parent"
+        android:id="@+id/get_details_tv"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
+</LinearLayout>

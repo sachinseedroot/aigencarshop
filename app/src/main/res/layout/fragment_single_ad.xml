@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        android:id="@+id/car_imgV"></ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="car Name"
+        android:id="@+id/car_name_tv"
+        android:layout_alignParentLeft="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="car price"
+        android:id="@+id/car_price_tv"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Owner's Comment"
+        android:fontFamily="@font/roboto_bold"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excellent condition,Single owner, Allow wheels,Finance available and test drive available."
+        android:fontFamily="@font/roboto_light"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Basic Overview"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_single_car_details_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="never" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Seller"
+        android:id="@+id/contact_seller_tv"></Button>
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash_fragment">
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.aigen.carshop.fragments.splashfragment"
+        android:label="splash_fragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/splash_action"
+            app:destination="@id/login_fragment"
+            app:enterAnim="@anim/slide_out_top"
+            app:exitAnim="@anim/slide_in_top"
+            app:popEnterAnim="@anim/slide_out_top"
+            app:popExitAnim="@anim/slide_in_top" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.aigen.carshop.fragments.loginfragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/register_fragment_click"
+            app:destination="@id/home_fragment"
+            app:enterAnim="@anim/slide_out_top"
+            app:exitAnim="@anim/slide_in_top"
+            app:popEnterAnim="@anim/slide_out_top"
+            app:popExitAnim="@anim/slide_in_top" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.aigen.carshop.fragments.homefragment"
+        android:label="home_fragment"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+</navigation>
+
