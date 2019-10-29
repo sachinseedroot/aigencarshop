@@ -1,50 +1,53 @@
 package com.aigen.carshop.db.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.reactivex.annotations.NonNull;
+
+@Entity(tableName = "carmodelTable")
 public class carmodel {
 
 
-    @Expose
-    @SerializedName("id")
-    private String id;
-    @Expose
-    @SerializedName("car_name")
+    @NonNull
+    @PrimaryKey
+    public int id;
+   
+    @ColumnInfo(name = "car_name")
     private String car_name;
-    @Expose
-    @SerializedName("car_type")
+   
+    @ColumnInfo(name = "car_type")
     private String car_type;
-    @Expose
-    @SerializedName("manufactured_date")
+   
+    @ColumnInfo(name = "manufactured_date")
     private String manufactured_date;
-    @Expose
-    @SerializedName("insurance")
+   
+    @ColumnInfo(name = "insurance")
     private String insurance;
-    @Expose
-    @SerializedName("color")
+   
+    @ColumnInfo(name = "color")
     private String color;
-    @Expose
-    @SerializedName("km_driven")
+   
+    @ColumnInfo(name = "km_driven")
     private String km_driven;
 
-    @Expose
-    @SerializedName("fuel_type")
+    @ColumnInfo(name = "fuel_type")
     private String fuel_type;
-    @Expose
-    @SerializedName("city_address")
+   
+    @ColumnInfo(name = "city_address")
     private String city_address;
 
-    @Expose
-    @SerializedName("added_on")
+    @ColumnInfo(name = "added_on")
     private String added_on;
 
-    @Expose
-    @SerializedName("price")
+    @ColumnInfo(name = "price")
     private String price;
-
-    @Expose
-    @SerializedName("image_array")
+   
+    @ColumnInfo(name = "image_array")
     private String image_array;
 
 
@@ -54,11 +57,11 @@ public class carmodel {
         return super.toString();
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -150,3 +153,21 @@ public class carmodel {
         this.image_array = image_array;
     }
 }
+
+
+//[
+//        {
+//        "id": 14,
+//        "car_name": "MARUTI SUZUKI Dzire ZXI+ AMT",
+//        "car_type": "Sedan",
+//        "manufactured_date": "2015",
+//        "insurance": "till March'20",
+//        "color": "Silky White",
+//        "km_driven": "8000km",
+//        "fuel_type": "Petrol",
+//        "city_address": "Kandivali(w), Mumbai",
+//        "added_on": "28-10-2019",
+//        "price": "Rs.800000/-",
+//        "image_array": "['https://auto.ndtvimg.com/car-images/colors/maruti-suzuki/dzire/maruti-suzuki-dzire-pearl-arctic-white.png','https://auto.ndtvimg.com/car-images/colors/maruti-suzuki/dzire/maruti-suzuki-dzire-pearl-arctic-white.png']"
+//        }
+//        ]

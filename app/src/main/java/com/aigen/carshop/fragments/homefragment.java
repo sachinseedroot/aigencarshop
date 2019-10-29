@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,9 +16,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.aigen.carshop.BaseFragment;
 import com.aigen.carshop.R;
 import com.aigen.carshop.adapter.carlistadapter;
+import com.aigen.carshop.controller.MainBaseApplication;
 import com.aigen.carshop.db.model.carmodel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class homefragment extends BaseFragment {
 
@@ -38,8 +42,19 @@ public class homefragment extends BaseFragment {
         carlistrecycler.setHasFixedSize(true);
         carlistrecycler.setLayoutManager(new LinearLayoutManager(mcontext, LinearLayoutManager.VERTICAL, false));
         carlistrecycler.setItemAnimator(new DefaultItemAnimator());
-        carlistrecycler.setAdapter(new carlistadapter(getContext(),new ArrayList<carmodel>()));
 
+        LiveData<List<carmodel>> carlistObserver = MainBaseApplication.getDBinstance().myDAO().getAllCarList();
+        carlistObserver.observe(this, new Observer<List<carmodel>>() {
+            @Override
+            public void onChanged(List<carmodel> carmodels) {
+                carlistrecycler.setAdapter(new carlistadapter(getContext(),carmodels, new carlistadapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position, Bundle bl) {
+                        loadFragment(view, bl, R.id.singlead_fragment, 0, true);
+                    }
+                }));
+            }
+        });
     }
 
 

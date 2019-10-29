@@ -116,6 +116,7 @@
     <Button
         android:layout_toRightOf="@+id/location_tv"
         android:layout_width="match_parent"
+        android:text="Check Details"
         android:id="@+id/get_details_tv"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

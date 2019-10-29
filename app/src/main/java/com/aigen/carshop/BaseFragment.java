@@ -56,6 +56,9 @@ public abstract class BaseFragment extends Fragment {
         activity.showSuccessSnackbar(message, view);
     }
 
+    public void loadImage(Context context, String url, ImageView view) {
+        activity.loadImage(context, url, view);
+    }
 
     public void loadImageDrawable(Context context, int drawable, ImageView view) {
         activity.loadImageDrawable(context, drawable, view);
