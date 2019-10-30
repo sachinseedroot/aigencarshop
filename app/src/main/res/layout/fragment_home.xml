@@ -19,14 +19,14 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/_5sdp"
         app:fab_bg_color="@color/colorPrimary"
-        app:fab_content="Start a discussion..."
+        app:fab_content="Post an ad..."
         app:fab_duration="100"
         app:fab_expanded="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         app:fab_padding="@dimen/_8sdp"
         app:fab_padding_text_icon="@dimen/_10sdp"
-        app:fab_text_color="@color/colorPrimary"
+        app:fab_text_color="@color/white"
         app:fab_text_size="@dimen/_10sdp"
         app:fab_typeface="fonts/lato_regular.ttf" />
 </RelativeLayout>

@@ -46,5 +46,12 @@
         android:label="singlead_fragment"
         tools:layout="@layout/fragment_single_ad">
     </fragment>
+
+    <fragment
+        android:id="@+id/post_fragment"
+        android:name="com.aigen.carshop.fragments.postadfragment"
+        android:label="post_fragment"
+        tools:layout="@layout/fragment_post_ad">
+    </fragment>
 </navigation>
 

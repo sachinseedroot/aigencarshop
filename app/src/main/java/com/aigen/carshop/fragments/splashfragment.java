@@ -53,7 +53,7 @@ public class splashfragment extends BaseFragment {
                         "    \"km_driven\": \"8000km\",\n" +
                         "    \"fuel_type\": \"Petrol\",\n" +
                         "    \"city_address\": \"Kandivali(w), Mumbai\",\n" +
-                        "    \"added_on\": \"28-10-2019\",\n" +
+                        "    \"added_on\": \"28-10-2019 00:00:00\",\n" +
                         "    \"price\": \"Rs.800000/-\",\n" +
                         "    \"image_array\": [\n" +
                         "      \"https://auto.ndtvimg.com/car-images/colors/maruti-suzuki/dzire/maruti-suzuki-dzire-pearl-arctic-white.png\",\n" +

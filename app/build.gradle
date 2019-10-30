@@ -54,4 +54,7 @@ dependencies {
 
     //floating button
     implementation 'com.github.imtuann:FloatingActionButtonExpandable:1.1.2'
+
+    //Image Gallery
+    implementation  'com.fxn769:pix:1.2.5'
 }
