@@ -47,6 +47,13 @@ public class singleadfragment extends BaseFragment {
     private TextView aotv;
     private Button contactsellerbtn;
 
+    public static singleadfragment newInstance(Bundle b1) {
+        singleadfragment f = new singleadfragment();
+        f.setArguments(b1);
+        return f;
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -110,7 +117,7 @@ public class singleadfragment extends BaseFragment {
                 for(int i=0;i<jsonArray.length();i++){
                     TextView textView = new TextView(mcontext);
                     textView.setText((i+1)+" ");
-                    textView.setTextColor(ContextCompat.getColor(mcontext,R.color.colorAccent));
+                    textView.setTextColor(ContextCompat.getColor(mcontext,R.color.lightgrey));
                     sliderDots.addView(textView);
                 }
                 viewpageradapter vp = new viewpageradapter(mcontext,jsonArray);

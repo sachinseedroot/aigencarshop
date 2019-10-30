@@ -2,14 +2,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:id="@+id/title"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+       <RelativeLayout
+           android:layout_centerInParent="true"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:layout_width="@dimen/_50sdp"
+               android:layout_height="@dimen/_50sdp"
+               android:src="@mipmap/ic_launcher"
+               android:id="@+id/logo"/>
+           <TextView
+               android:layout_toRightOf="@+id/logo"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerInParent="true"
+               android:text="CarShop"
+               android:textSize="@dimen/_20ssp"
+               android:fontFamily="@font/roboto_bold"/>
+       </RelativeLayout>
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_car_home_list"
+        android:background="@color/lightgrey"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:nestedScrollingEnabled="true"
+        android:layout_below="@+id/title"
         android:overScrollMode="never" />
 
     <com.tuann.floatingactionbuttonexpandable.FloatingActionButtonExpandable
@@ -19,14 +48,14 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/_5sdp"
         app:fab_bg_color="@color/colorPrimary"
-        app:fab_content="Post an ad..."
+        app:fab_content="Post an Ad"
         app:fab_duration="100"
         app:fab_expanded="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         app:fab_padding="@dimen/_8sdp"
         app:fab_padding_text_icon="@dimen/_10sdp"
-        app:fab_text_color="@color/white"
-        app:fab_text_size="@dimen/_10sdp"
-        app:fab_typeface="fonts/lato_regular.ttf" />
+        app:fab_text_color="@color/yellow"
+        app:fab_text_size="@dimen/_12sdp"
+        app:fab_typeface="fonts/roboto_bold.ttf" />
 </RelativeLayout>

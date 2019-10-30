@@ -1,22 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/ic_launcher"
+                android:id="@+id/logo"/>
+            <TextView
+                android:layout_toRightOf="@+id/logo"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Login to continue"
+                android:textSize="@dimen/_20ssp"
+                android:fontFamily="@font/roboto_bold"/>
+        </RelativeLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_email"
+            style="@style/TextLabel"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="test@aigen.tech"
                 android:inputType="textEmailAddress"
                 android:hint="@string/hint_email" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -24,10 +51,15 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout_password"
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            style="@style/TextLabel"
             android:layout_height="wrap_content">
 
             <EditText
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_password"
+                android:paddingLeft="5dp"
+                android:text="AigenTech"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -35,10 +67,16 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/loginbtn"
-            android:text="LOG IN"></Button>
+            android:textAllCaps="false"
+            android:textSize="@dimen/_16ssp"
+            android:fontFamily="@font/roboto_regular"
+            android:background="@color/yellow"
+            android:textColor="@color/colorPrimary"
+            android:text="Login"></Button>
     </LinearLayout>
 
 </RelativeLayout>

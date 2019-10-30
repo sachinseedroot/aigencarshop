@@ -2,253 +2,338 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/white"
     android:layout_height="match_parent">
     <RelativeLayout
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_180sdp">
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/SliderDots"/>
-
-        <LinearLayout
-            android:id="@+id/SliderDots"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_20sdp"/>
+        android:id="@+id/title"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@mipmap/ic_launcher"
+                android:id="@+id/logo"/>
+            <TextView
+                android:layout_toRightOf="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="CarShop"
+                android:textSize="@dimen/_20ssp"
+                android:fontFamily="@font/roboto_bold"/>
+        </RelativeLayout>
     </RelativeLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="car Name"
-        android:id="@+id/car_name_tv"
-        android:layout_alignParentLeft="true"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="car price"
-        android:id="@+id/car_price_tv"
-        android:layout_alignParentLeft="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Owner's Comment"
-        android:fontFamily="@font/roboto_bold"></TextView>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Excellent condition,Single owner, Allow wheels,Finance available and test drive available."
-        android:fontFamily="@font/roboto_light"></TextView>
-
-    <TextView
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Basic Overview"/>
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ctlabeltv"
-                android:text="Car Type"
-                android:layout_alignParentLeft="true"/>
-
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/cttv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/ctlabeltv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp">
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/mdlabeltv"
-                android:text="Manufactured Year"
-                android:layout_alignParentLeft="true"/>
+                android:layout_height="match_parent"
+                android:layout_above="@+id/SliderDots"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/mdtv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/mdlabeltv"
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
+                android:layout_height="@dimen/_20sdp"/>
         </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ilabeltv"
-                android:text="Insurance"
-                android:layout_alignParentLeft="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="car Name"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="@dimen/_14ssp"
+            android:id="@+id/car_name_tv"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="car price"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="@dimen/_14ssp"
+            android:id="@+id/car_price_tv"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="@dimen/_14ssp"
+            android:text="Basic Overview"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ctlabeltv"
+                    android:text="Car Type"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:layout_alignParentLeft="true"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/itv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/ilabeltv"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/colorlabeltv"
-                android:text="Color"
-                android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cttv"
+                    android:text=""
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/ctlabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mdlabeltv"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:text="Manufactured Year"
+                    android:layout_alignParentLeft="true"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/colortv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/colorlabeltv"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/kmlabeltv"
-                android:text="Km driven"
-                android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mdtv"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:text=""
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/mdlabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ilabeltv"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:text="Insurance"
+                    android:layout_alignParentLeft="true"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/kmtv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/kmlabeltv"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ftlabeltv"
-                android:text="Fuel type"
-                android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:id="@+id/itv"
+                    android:text=""
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/ilabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:id="@+id/colorlabeltv"
+                    android:text="Color"
+                    android:layout_alignParentLeft="true"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fttv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/ftlabeltv"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/calabeltv"
-                android:text="Location"
-                android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/colortv"
+                    android:text=""
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/colorlabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kmlabeltv"
+                    android:text="Km driven"
+                    android:layout_alignParentLeft="true"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/catv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/calabeltv"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:orientation="vertical" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/aolabeltv"
-                android:text="Ad posted on"
-                android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kmtv"
+                    android:text=""
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/kmlabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:id="@+id/ftlabeltv"
+                    android:text="Fuel type"
+                    android:layout_alignParentLeft="true"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/aotv"
-                android:text=""
-                android:layout_alignParentRight="true"/>
-            <View
-                android:layout_below="@+id/aolabeltv"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/colorPrimary" />
-        </RelativeLayout>
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fttv"
+                    android:text=""
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/ftlabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/calabeltv"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:text="Location"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/catv"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:text=""
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/calabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aolabeltv"
+                    android:text="Ad posted on"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_12ssp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:padding="5dp"
+                    android:id="@+id/aotv"
+                    android:text=""
+                    android:layout_alignParentRight="true"/>
+                <View
+                    android:layout_below="@+id/aolabeltv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/colorPrimary" />
+            </RelativeLayout>
+        </LinearLayout>
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Seller"
+            android:textAllCaps="false"
+            android:background="@drawable/oval_button"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_bold"
+            android:id="@+id/contact_seller_tv"></Button>
     </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contact Seller"
-        android:id="@+id/contact_seller_tv"></Button>
+    </ScrollView>
 </LinearLayout>

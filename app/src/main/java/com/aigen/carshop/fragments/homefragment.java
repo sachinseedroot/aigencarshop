@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.aigen.carshop.BaseFragment;
 import com.aigen.carshop.R;
+import com.aigen.carshop.activities.MainActivity;
 import com.aigen.carshop.adapter.carlistadapter;
 import com.aigen.carshop.controller.MainBaseApplication;
 import com.aigen.carshop.db.model.carmodel;
@@ -72,7 +73,7 @@ public class homefragment extends BaseFragment {
                 carlistrecycler.setAdapter(new carlistadapter(getContext(), carmodels, new carlistadapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position, Bundle bl) {
-                        loadFragment(view, bl, R.id.singlead_fragment, 0, true);
+                        ((MainActivity)mcontext).loadSingleAdScreen(bl);
                     }
                 }));
             }
@@ -83,7 +84,7 @@ public class homefragment extends BaseFragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadFragment(v, new Bundle(), R.id.post_fragment, 0, true);
+                ((MainActivity)mcontext).loadPostAdScreen();
             }
         });
     }

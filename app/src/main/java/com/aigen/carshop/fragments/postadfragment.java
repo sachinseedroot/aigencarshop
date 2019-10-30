@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,8 +22,10 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.aigen.carshop.BaseActivity;
 import com.aigen.carshop.BaseFragment;
 import com.aigen.carshop.R;
+import com.aigen.carshop.activities.MainActivity;
 import com.aigen.carshop.controller.MainBaseApplication;
 import com.aigen.carshop.db.model.carmodel;
 import com.fxn.pix.Pix;
@@ -85,8 +88,15 @@ public class postadfragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+        View views = getActivity().getCurrentFocus();
         switch (v.getId()) {
+
             case R.id.attachtv:
+                if (views != null) {
+                    InputMethodManager imm = (InputMethodManager) mcontext.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(views.getWindowToken(), 0);
+                }
+
                 if (!hasPermissions(mcontext)) {
                     requestPermission();
                     return;
@@ -103,7 +113,14 @@ public class postadfragment extends BaseFragment implements View.OnClickListener
                 }
                 break;
             case R.id.save_btn:
-                new SavePost().execute();
+                if (views != null) {
+                    InputMethodManager imm = (InputMethodManager) mcontext.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(views.getWindowToken(), 0);
+                }
+
+                if (checkModel() == true) {
+                    new SavePost().execute();
+                }
                 break;
 
         }
@@ -145,7 +162,7 @@ public class postadfragment extends BaseFragment implements View.OnClickListener
             super.onPostExecute(cm);
             if (cm != null) {
                 Toast.makeText(mcontext, "Saved successfully", Toast.LENGTH_SHORT).show();
-                loadFragment(getView(), new Bundle(), R.id.home_fragment, 0, false);
+                ((MainActivity)mcontext).loadHomeScreen();
             }
         }
     }
@@ -186,13 +203,10 @@ public class postadfragment extends BaseFragment implements View.OnClickListener
                 ArrayList<String> returnValue = data.getStringArrayListExtra(Pix.IMAGE_RESULTS);
                 imagearray = new JSONArray();
                 if (returnValue != null && returnValue.size() > 0) {
-                    StringBuilder stringBuilder = new StringBuilder();
-                    stringBuilder.append("Remove all  X" + "\n");
                     for (int i = 0; i < returnValue.size(); i++) {
-                        stringBuilder.append(returnValue.get(i) + "\n");
                         imagearray.put(returnValue.get(i));
                     }
-                    attachtv.setText(stringBuilder);
+                    attachtv.setText("Remove all  X" + "\n"+returnValue.size()+" Photo(s) selected");
                 } else {
                     Toast.makeText(mcontext, "Select a valid image", Toast.LENGTH_SHORT).show();
                 }
@@ -218,5 +232,46 @@ public class postadfragment extends BaseFragment implements View.OnClickListener
                 Toast.makeText(mcontext, "App permission denied.", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public boolean checkModel() {
+        if(TextUtils.isEmpty(input_name.getText().toString().trim())){
+            input_name.setError("Cannot be empty");
+            return false;
+        }
+        if(TextUtils.isEmpty(input_md.getText().toString().trim())){
+            input_md.setError("Cannot be empty");
+            return false;
+        }
+        if(TextUtils.isEmpty(input_ins.getText().toString().trim())){
+            input_ins.setError("Cannot be empty");
+            return false;
+        }
+        if(TextUtils.isEmpty(input_color.getText().toString().trim())){
+            input_color.setError("Cannot be empty");
+            return false;
+        }
+        if(TextUtils.isEmpty(input_km.getText().toString().trim())){
+            input_km.setError("Cannot be empty");
+            return false;
+        }
+        if(TextUtils.isEmpty(input_ft.getText().toString().trim())){
+            input_ft.setError("Cannot be empty");
+            return false;
+        }
+        if(TextUtils.isEmpty(input_ca.getText().toString().trim())){
+            input_ca.setError("Cannot be empty");
+            return false;
+        }
+        if(TextUtils.isEmpty(input_price.getText().toString().trim())){
+            input_price.setError("Cannot be empty");
+            return false;
+        }
+        if(imagearray==null || imagearray.length()==0){
+            Toast.makeText(mcontext,"Please attach atleast 1 photo.",Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
     }
 }

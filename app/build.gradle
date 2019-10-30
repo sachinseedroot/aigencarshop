@@ -26,6 +26,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
+    //cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+
     //recyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0-beta02'
 
@@ -43,11 +46,6 @@ dependencies {
 
     //  For responsive size of another all
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
-
-    //Navigation  Arch
-    def nav_version = "2.1.0-rc01"
-    implementation "androidx.navigation:navigation-fragment:$nav_version"
-    implementation "androidx.navigation:navigation-ui:$nav_version"
 
     //gson
     implementation 'com.google.code.gson:gson:2.8.6'

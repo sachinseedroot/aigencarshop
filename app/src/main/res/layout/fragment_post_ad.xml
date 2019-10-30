@@ -2,20 +2,45 @@
 <ScrollView android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:scrollbars="none"
+    android:background="@color/white"
+    android:padding="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
+        android:layout_marginBottom="@dimen/_180sdp"
         android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@mipmap/ic_launcher"
+                android:id="@+id/logo"/>
+            <TextView
+                android:layout_toRightOf="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Want to post your Ad? Fill in the details"
+                android:textSize="@dimen/_16ssp"
+                android:fontFamily="@font/roboto_bold"/>
+        </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Want to post your Ad? Fill in the details below..."/>
-
-        <com.google.android.material.textfield.TextInputLayout
+            android:layout_gravity="right"
+            android:text="*All fields are mandatory"
+            android:textColor="@color/red"
+            android:fontFamily="@font/roboto_light"/>
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
+                android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -23,88 +48,96 @@
                 android:hint="Car Name and model" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Car type (sedan,suv,muv,etc.)" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_md"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:hint="Manufactured year" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_ins"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Insurance details" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Car color" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_km"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Km driven" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_ft"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Fuel type (petrol,diesel,electric or cng)" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_ca"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:hint="Car location" />
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout  style="@style/TextLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
+            <EditText android:textSize="@dimen/_12ssp"
+                android:fontFamily="@font/roboto_regular"
                 android:id="@+id/input_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,13 +150,20 @@
             android:layout_height="wrap_content"
             android:id="@+id/attachtv"
             android:padding="5dp"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/green"
+            android:fontFamily="@font/roboto_bold"
             android:text="Click to Attach Car Images +"/>
 
         <Button
+            android:layout_marginTop="10dp"
+            android:background="@drawable/oval_button"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
-            android:text="SAVE POST"
+            android:textAllCaps="false"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Save Post"
             android:id="@+id/save_btn"/>
     </LinearLayout>
 </ScrollView>
